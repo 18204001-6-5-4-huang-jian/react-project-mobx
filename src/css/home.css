@@ -1,0 +1,41 @@
+.home-container{
+	width: 100%;
+	overflow: hidden;
+}
+.home-header{
+	width:100%;
+	height: 100px;
+	line-height: 100px;
+	background:#091f27;
+	margin-bottom:10px;
+}
+.home-header-popver{
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	float: right;
+	margin-top:25px;
+	margin-right: 10px;
+    cursor: pointer;
+	/* border:1px solid #ffffff; */
+}
+.home-header-popver-headimg{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	float: left;
+	background: deepskyblue;
+}
+.home-header-popver-email{
+	float: left;
+	padding: 0 3px;
+	color: #ffffff;
+}
+.home-container-list-div{
+	height: 150px;
+	line-height: 150px;
+	text-align: center;
+	color: #ffffff;
+	font-size: 20px;
+	background:#091f27;
+}
