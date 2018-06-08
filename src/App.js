@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { Switch, Route} from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import './App.css'
-
 //引入组件
 import Login from './components/Login'
 import Home from './components/Home'
@@ -15,14 +14,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       <Provider {...stores}>
-         <Switch>
-           <Route  exact path="/" component={Login}/>
-           <Route  path="/login"  component={Login}/>
-           <Route  path="/home"  component={Home}/>
-           <Route  path="/detail/:id"  component={Detail}/>
-         </Switch>
-         </Provider>
+        <Provider {...stores}>
+          <Switch>
+            <Route exact path="/" component={Login} />
+            <Route path="/login" component={Login} />
+            <Route path="/home" component={Home} />
+            <Route path="/detail/:id" component={Detail} />
+          </Switch>
+        </Provider>
       </div>
     );
   }

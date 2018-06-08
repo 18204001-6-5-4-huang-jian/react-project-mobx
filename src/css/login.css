@@ -22,8 +22,8 @@
 
 .login-container .ant-btn-primary {
 	margin-top: 200px;
+	background: #000000 !important;
 }
-
 .login-title {
 	cursor: pointer;
 	color: #ffffff;

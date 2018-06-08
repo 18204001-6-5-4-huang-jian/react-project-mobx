@@ -1,9 +1,12 @@
 import React from 'react'
-class Son extends React.Component {
+import { Radio } from 'antd';
+const RadioGroup = Radio.Group;
+class Child extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            text: props.text
+            text: props.text,
+            value: 1
         }
     }
     componentDidMount() {
@@ -15,10 +18,25 @@ class Son extends React.Component {
     toParent = () => {
         this.props.click(this.state.text);
     }
+    onChange = (e) => {
+        console.log('radio checked', e.target.value);
+        this.setState({
+            value: e.target.value,
+        });
+    }
     render() {
         return (
-            <div style={{ fontSize: '20px', marginTop: '20px', fontWeight: 'bold', cursor: 'pointer' }} onClick={this.toParent}>{this.state.text}</div>
+            <div>
+                <div style={{ fontSize: '20px', marginTop: '20px', fontWeight: 'bold', cursor: 'pointer' }} onClick={this.toParent}>{this.state.text}</div>
+                <RadioGroup onChange={this.onChange} value={this.state.value}>
+                    <Radio value={1}>A</Radio>
+                    <Radio value={2}>B</Radio>
+                    <Radio value={3}>C</Radio>
+                    <Radio value={4}>D</Radio>
+                </RadioGroup>
+            </div>
+
         )
     }
 }
-export default Son
+export default Child
