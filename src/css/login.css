@@ -31,7 +31,8 @@
 	height: 30px;
 	line-height: 30px;
 	text-align: center;
-	font-size: 20px;
+	font-size: 18px;
 	margin: 30px 0;
 	font-family: '微软雅黑';
+	letter-spacing: 5px;
 }

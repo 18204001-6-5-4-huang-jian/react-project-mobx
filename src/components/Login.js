@@ -43,11 +43,12 @@ class Login extends React.Component {
     }
     render() {
         const { name } = this.state;
+        const { listStore } = this.props;
         return (
             <div className="login-background" >
                 <div className="login-container" >
                     <div className="login-title" > {name} </div>
-                    <div className="login-title" onClick={this.candleClick}>Login</div>
+                    <div className="login-title" onClick={this.candleClick}>{listStore.lang === 'zh_CN' ? '登录' : 'Login'}</div>
                     <a href='../images/bg.ipg' download='demo.jpg' >
                         <Button type="primary" icon="download" > Download </Button>
                     </a>

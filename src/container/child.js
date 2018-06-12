@@ -1,7 +1,7 @@
 import React from 'react'
 import { Radio } from 'antd';
 const RadioGroup = Radio.Group;
-class Child extends React.Component {
+class Children extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -16,7 +16,7 @@ class Child extends React.Component {
 
     }
     toParent = () => {
-        this.props.click(this.state.text);
+        this.props.sendParent(this.state.text);
     }
     onChange = (e) => {
         console.log('radio checked', e.target.value);
@@ -39,4 +39,4 @@ class Child extends React.Component {
         )
     }
 }
-export default Child
+export default Children

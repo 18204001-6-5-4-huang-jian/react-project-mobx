@@ -5,6 +5,7 @@ import './App.css'
 import Login from './components/Login'
 import Home from './components/Home'
 import Detail from './components/Detail'
+import Hierarchy from './components/Hierarchy'
 import { Provider } from 'mobx-react'
 //从Stores中引入
 import searchStore from './stores'
@@ -20,6 +21,7 @@ class App extends Component {
             <Route path="/login" component={Login} />
             <Route path="/home" component={Home} />
             <Route path="/detail/:id" component={Detail} />
+            <Route path="/hierarchy" component={Hierarchy} />
           </Switch>
         </Provider>
       </div>

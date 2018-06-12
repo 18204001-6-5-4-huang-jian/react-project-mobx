@@ -1,18 +1,18 @@
 import React from 'react'
-// import Highcharts from 'highcharts';
 // import ReactHighstock from 'react-highcharts/ReactHighstock.src'
-import ReactHighcharts from 'react-highcharts'
-import moment from 'moment'
-import '../css/detail.css'
+// import ReactHighcharts from 'react-highcharts'
 import { Progress, Form, Row, Col, Input, Button, Icon } from 'antd';
-const FormItem = Form.Item;
+import moment from 'moment'
+import Highcharts from 'highcharts'
+import '../css/detail.css'
+const FormItem = Form.Item
 @Form.create()
 class Detail extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             text: '',
-            config: {
+            chartConfig: {
                 credits: {
                     enabled: false
                 },
@@ -87,8 +87,11 @@ class Detail extends React.Component {
         let now = new Date().getTime();
         console.log(moment(now).format('YYYY-MM-DD HH:mm:ss'));
         this.setState({
-            text:moment(now).format('YYYY-MM-DD HH:mm:ss')
+            text: moment(now).format('YYYY-MM-DD HH:mm:ss')
         })
+        Highcharts.chart('container',
+            this.state.chartConfig
+        )
     }
     changeInfo = () => {
         // console.log(Object.keys(this.state.info));
@@ -145,9 +148,10 @@ class Detail extends React.Component {
         return (
             <div className='detail-container'>
                 <div dangerouslySetInnerHTML={rawHTML} onClick={this.changeInfo}></div>
-                <div style={{fontSize:'20px',color:'red'}}>{this.state.text}</div>
+                <div style={{ fontSize: '20px', color: 'red' }}>{this.state.text}</div>
                 <div className='detail-chart'>
-                    <ReactHighcharts config={this.state.config}></ReactHighcharts>
+                    <div id="container"></div>
+                    {/* <ReactHighcharts config={this.state.chartConfig}></ReactHighcharts> */}
                 </div>
                 <Progress type="circle" percent={50} />
                 <Form

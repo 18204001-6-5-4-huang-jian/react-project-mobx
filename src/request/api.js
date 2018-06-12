@@ -31,8 +31,8 @@ const instance = axios.create({
   }
 })
 
+//携带token
 instance.interceptors.request.use(function (config) {
-  //携带token
   let token = localStorage.getItem('token');
   if (token) {
     config.headers.Authorization = token;
