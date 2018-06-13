@@ -3,6 +3,7 @@ import React from 'react'
 // import ReactHighcharts from 'react-highcharts'
 import { Progress, Form, Row, Col, Input, Button, Icon } from 'antd';
 import moment from 'moment'
+import dayjs from 'dayjs'
 import Highcharts from 'highcharts'
 import '../css/detail.css'
 const FormItem = Form.Item
@@ -86,6 +87,7 @@ class Detail extends React.Component {
         //console.log(this.props.match.params.id);
         let now = new Date().getTime();
         console.log(moment(now).format('YYYY-MM-DD HH:mm:ss'));
+        console.log(dayjs(now).format('YYYY-MM-DD HH:mm:ss'));
         this.setState({
             text: moment(now).format('YYYY-MM-DD HH:mm:ss')
         })

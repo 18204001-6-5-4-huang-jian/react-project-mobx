@@ -9,6 +9,31 @@
 	background:#091f27;
 	margin-bottom:10px;
 }
+.home-header-toggle{
+	display: block;
+	float: left;
+	width: 140px;
+	height: 40px;
+	line-height: 40px;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+.home-header-toggle-btn{
+	float: left;
+	width: 50px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #ffffff;
+	border: 1.5px solid #ffffff;
+	cursor: pointer;
+	border-radius: 40%;
+	margin:0 10px;
+}
+.home-header-toggle-btn.active{
+	color:deeppink;
+	font-weight: bold;
+}
 .home-header-popver{
 	width: 200px;
 	height: 40px;

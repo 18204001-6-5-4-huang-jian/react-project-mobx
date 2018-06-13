@@ -20,7 +20,7 @@ class Hierachy extends React.Component {
         // ) 
         return (
             <div className='hierachy-container'>
-                <div style={{ fontSize: '22px' }}>{this.state.text}</div>
+                <div style={{ fontSize: '22px', color: 'red' }}>{this.state.text}</div>
                 {/* {this.props.children} */}
             </div >
         )

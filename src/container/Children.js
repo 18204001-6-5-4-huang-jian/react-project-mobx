@@ -1,5 +1,4 @@
 import React from 'react'
-
 class Children extends React.Component {
     constructor(props) {
         super(props)
@@ -8,6 +7,9 @@ class Children extends React.Component {
         }
     }
     componentDidMount() {
+
+    }
+    componentWillUnmount() {
 
     }
     render() {

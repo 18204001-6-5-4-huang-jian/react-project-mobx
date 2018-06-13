@@ -5,6 +5,7 @@ import md5 from 'md5'
 import '../css/login.css'
 import { userLogin } from '../request/api.js'
 import { observer, inject } from 'mobx-react'
+import classNames from 'classnames'
 @inject('listStore')
 @observer
 class Login extends React.Component {
@@ -17,11 +18,17 @@ class Login extends React.Component {
     componentDidMount() {
         const { listStore } = this.props;
         console.log(listStore.lang);
+        window.addEventListener('keyup', this.enterKey)
         // listStore.changeLang('en');
         // console.log(listStore.lang);
     }
     componentWillUnmount() {
-
+        window.removeEventListener('keyup', this.enterKey)
+    }
+    enterKey = (e) => {
+        if (e.keyCode === 13) {
+            this.candleClick();
+        }
     }
     candleClick = async () => {
         const res = await userLogin({
@@ -44,10 +51,19 @@ class Login extends React.Component {
     render() {
         const { name } = this.state;
         const { listStore } = this.props;
+        //  const divClass = classNames({
+        //    'class-one': true,
+        //    'class-two': true,
+        //    'login-title':true
+        // });
         return (
             <div className="login-background" >
                 <div className="login-container" >
-                    <div className="login-title" > {name} </div>
+                    <div className={classNames({
+                        'class-one': true,
+                        'class-two': true,
+                        'login-title': true
+                    })} > {name} </div>
                     <div className="login-title" onClick={this.candleClick}>{listStore.lang === 'zh_CN' ? '登录' : 'Login'}</div>
                     <a href='../images/bg.ipg' download='demo.jpg' >
                         <Button type="primary" icon="download" > Download </Button>
