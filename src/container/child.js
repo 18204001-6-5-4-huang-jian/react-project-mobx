@@ -10,7 +10,7 @@ class Children extends React.Component {
         }
     }
     componentDidMount() {
-        //console.log(this.props.text)
+        //console.log(this.props.text);
     }
     componentWillUnmount() {
 
@@ -19,7 +19,7 @@ class Children extends React.Component {
         this.props.sendParent(this.state.text);
     }
     onChange = (e) => {
-        console.log('radio checked', e.target.value);
+        console.log('radio-checked', e.target.value);
         this.setState({
             value: e.target.value,
         });

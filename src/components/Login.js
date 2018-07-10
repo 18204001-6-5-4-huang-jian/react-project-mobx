@@ -16,8 +16,8 @@ class Login extends React.Component {
         }
     }
     componentDidMount() {
-        const { listStore } = this.props;
-        console.log(listStore.lang);
+        // const { listStore } = this.props;
+        // console.log(listStore.lang);
         window.addEventListener('keyup', this.enterKey)
         // listStore.changeLang('en');
         // console.log(listStore.lang);
@@ -51,11 +51,6 @@ class Login extends React.Component {
     render() {
         const { name } = this.state;
         const { listStore } = this.props;
-        //  const divClass = classNames({
-        //    'class-one': true,
-        //    'class-two': true,
-        //    'login-title':true
-        // });
         return (
             <div className="login-background" >
                 <div className="login-container" >

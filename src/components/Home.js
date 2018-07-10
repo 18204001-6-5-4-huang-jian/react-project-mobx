@@ -1,8 +1,8 @@
 import React from 'react'
 import { Popover, message, Row, Col } from 'antd'
 import classNames from 'classnames'
-import '../css/home.css'
 import Child from '../container/Child'
+import '../css/home.css'
 class Home extends React.Component {
 	constructor(props) {
 		super(props)
@@ -12,6 +12,7 @@ class Home extends React.Component {
 		}
 	}
 	componentDidMount() {
+		// console.log(this.props);
 		message.info('登录成功');
 	}
 	componentWillUnmount() {

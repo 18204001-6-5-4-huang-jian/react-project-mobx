@@ -1,27 +1,28 @@
 import React from 'react'
-// import { Route } from 'react-router-dom'
-// import HierarchyChild from '../container/Children'
+import { Button } from 'antd'
 class Hierachy extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            text: 'Hierachy'
+            text: 'Hierachy',
+            list: [
+                { name: 'jhuang' },
+                { name: 'xiaoming' }
+            ]
         }
     }
     componentDidMount() {
-        //   console.log(this.props.match.url);
+        //console.log(this.props.match.url);
     }
     render() {
-        // const Users = ({match}) => (
-        // <div>
-        //     <h2>Title</h2>
-        //     <Route path={`${match.url}/child`} component={HierarchyChild}/>
-        // </div>
-        // ) 
+        const listTab = this.state.list.map((item, index) => {
+            return <Button key={index} type="primary" style={{ margin: '10px' }}>{item.name}</Button>
+        })
         return (
             <div className='hierachy-container'>
                 <div style={{ fontSize: '22px', color: 'red' }}>{this.state.text}</div>
-                {/* {this.props.children} */}
+                {/* {this.state.text === 'Hierachy' ? listTab : null} */}
+                {listTab}
             </div >
         )
     }
