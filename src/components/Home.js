@@ -1,7 +1,7 @@
 import React from 'react'
 import { Popover, message, Row, Col } from 'antd'
 import classNames from 'classnames'
-import Child from '../container/Child'
+import Child from '../container/child'
 import '../css/home.css'
 class Home extends React.Component {
 	constructor(props) {
