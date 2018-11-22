@@ -8,9 +8,9 @@ import Detail from './components/Detail'
 import Hierarchy from './components/Hierarchy'
 import { Provider } from 'mobx-react'
 //从Stores中引入
-import searchStore from './stores'
+import abcStore from './stores'
 // 初始化store实例
-const stores = new searchStore()
+const stores = new abcStore()
 class App extends Component {
   render() {
     return (

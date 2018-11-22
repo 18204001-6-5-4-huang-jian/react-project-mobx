@@ -3,10 +3,10 @@
 */
 import ListStore from './listStore'
 
-class searchStore {
+class abcStore {
   constructor() {
     this.listStore = new ListStore(this)
   }
 }
 
-export default searchStore
+export default abcStore

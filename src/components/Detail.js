@@ -1,4 +1,5 @@
 import React from 'react'
+// import ReactHighstock from 'react-highcharts/ReactHighstock.src'
 import { Progress, Form, Row, Col, Input, Button, Icon } from 'antd';
 import moment from 'moment'
 import dayjs from 'dayjs'
@@ -10,6 +11,7 @@ class Detail extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            text: '',
             chartConfig: {
                 credits: {
                     enabled: false
@@ -77,7 +79,6 @@ class Detail extends React.Component {
                 name: 'jhuang',
                 age: 18
             },
-            text: '',
             expand: false
         }
     }
@@ -143,8 +144,8 @@ class Detail extends React.Component {
     }
     render() {
         const rawHTML = {
-            __html: "<h1>非DOM属性:dangerouslySetInnerHTML标签</h1>"
-        }
+            __html: "<h2>非DOM属性:dangerouslySetInnerHTML标签</h2>"
+        };
         return (
             <div className='detail-container'>
                 <div dangerouslySetInnerHTML={rawHTML} onClick={this.changeInfo}></div>
