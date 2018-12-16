@@ -12,9 +12,6 @@ class Children extends React.Component {
     componentDidMount() {
         //console.log(this.props.text);
     }
-    componentWillUnmount() {
-
-    }
     toParent = () => {
         this.props.sendParent(this.state.text);
     }
