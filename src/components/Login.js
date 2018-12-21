@@ -12,7 +12,9 @@ export default class Login extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            name: 'Welcome'
+            name: 'Welcome',
+            email:'',
+            password:''
         }
     }
     componentDidMount() {
@@ -47,8 +49,14 @@ export default class Login extends React.Component {
         }
 
     }
-    candleClick = () => {
-        console.log('登陆');
+    // candleClick = () => {
+    //     console.log('login');
+    // }
+    handleInputChange = (e) =>{
+        const target = e.target;
+        this.setState({
+            [target.name]:target.value
+        })
     }
     render() {
         const { name } = this.state;
@@ -61,7 +69,11 @@ export default class Login extends React.Component {
                         'class-two': true,
                         'login-title': true
                     })} > {name} </div>
-                    <div className="login-title" onClick={this.candleClick}>{listStore.lang === 'zh_CN' ? '登录' : 'Login'}</div>
+                    {/* <div className="login-title" onClick={this.candleClick}>{listStore.lang === 'zh_CN' ? '登录' : 'Login'}</div> */}
+                    <div className="inputs">
+                    <input type="text" value={this.state.email} name="email" placeholder="账 号" autocomplete="off" onChange={this.handleInputChange}/>
+                    <input type="password" value={this.state.password} name="password" placeholder="密 码" autocomplete="off" onChange={this.handleInputChange}/>
+                    </div>
                 </div>
             </div>
         )
