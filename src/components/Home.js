@@ -54,7 +54,7 @@ class Home extends React.Component {
 						<div className='home-container-list-div' onClick={() => { this.props.history.push(`/detail/${555}`) }}>Center</div>
 					</Col>
 					<Col span={8} xs={12} md={12} lg={8} xl={8} className='home-container-list'>
-						<div className='home-container-list-div' onClick={() => { this.props.history.push(`/detail/${555}`) }}>Right</div>
+						<div className='home-container-list-div' onClick={() => { this.props.history.push('/dashboard') }}>Right</div>
 					</Col>
 				</Row>
 				<Child text={this.state.text} sendParent={(params) => { this.clickFromchild(params) }} />

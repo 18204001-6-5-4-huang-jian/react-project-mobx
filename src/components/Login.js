@@ -68,11 +68,12 @@ export default class Login extends React.Component {
                         'class-one': true,
                         'class-two': true,
                         'login-title': true
-                    })} > {name} </div>
-                    {/* <div className="login-title" onClick={this.candleClick}>{listStore.lang === 'zh_CN' ? '登录' : 'Login'}</div> */}
+                    })} > 
+                    {listStore.lang === 'zh_CN' ? '欢迎' : name}
+                     </div>
                     <div className="inputs">
-                    <input type="text" value={this.state.email} name="email" placeholder="账 号" autocomplete="off" onChange={this.handleInputChange}/>
-                    <input type="password" value={this.state.password} name="password" placeholder="密 码" autocomplete="off" onChange={this.handleInputChange}/>
+                    <input type="text" value={this.state.email} name="email" placeholder="账 号" autoComplete="off" onChange={this.handleInputChange}/>
+                    <input type="password" value={this.state.password} name="password" placeholder="密 码" autoComplete="off" onChange={this.handleInputChange}/>
                     </div>
                 </div>
             </div>
