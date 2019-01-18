@@ -13,6 +13,17 @@ class Home extends React.Component {
 	}
 	componentDidMount() {
 		message.info('登录成功');
+		console.log(this.props.location.search);
+		var obj = {};
+	    //获取url的参数部分
+	    var params = this.props.location.search.substr(1);
+	    //[^&=]+ 表示不含&或=的连续字符，加上()就是提取对应字符串
+	    params.replace(/([^&=]+)=([^&=]*)/gi,function(rs,$1,$2){
+	    //decodeURIComponent() 函数可对 encodeURIComponent() 函数编码的 URI 进行解码。
+	        obj[$1] =  decodeURIComponent($2);
+	    });
+
+	    console.log(obj);
 	}
 	componentWillUnmount() {
 

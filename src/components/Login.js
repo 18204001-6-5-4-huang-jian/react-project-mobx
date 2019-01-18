@@ -41,17 +41,14 @@ export default class Login extends React.Component {
             message.info('请求失败')
         } else if (res.data.success) {
             this.props.history.push({
-                pathname: '/home'
-                // search:'?name=jhuang&age=18'
+                pathname: '/home',
+                search:'?name=jhuang&age=18'
             });
         } else if (!res.data.success) {
             message.info(`对不起,${res.data.message}`);
         }
 
     }
-    // candleClick = () => {
-    //     console.log('login');
-    // }
     handleInputChange = (e) =>{
         const target = e.target;
         this.setState({
