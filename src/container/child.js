@@ -33,7 +33,7 @@ class Children extends React.Component {
                     <Radio value={3}>C</Radio>
                     <Radio value={4}>D</Radio>
                 </RadioGroup>
-                {this.state.value === 2 && <div style={{marginTop:'20px'}}>{this.state.value}</div>}
+                {this.state.value === 2 && <div style={{marginTop:'20px'}}>B</div>}
             </div>
 
         )

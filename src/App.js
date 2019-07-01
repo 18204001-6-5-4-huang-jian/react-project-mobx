@@ -1,18 +1,20 @@
 import React, { Component } from 'react'
+// 路由依赖
 import { Switch, Route } from 'react-router-dom'
 import './App.css'
-//引入组件
-import Login from './components/Login'
-import Home from './components/Home'
-import Detail from './components/Detail'
-import Hierarchy from './components/Hierarchy'
-import Dashboard from './components/Dashboard'
-import Errorpage from './components/Errorpage'
+// 异步组件
+import AsyncComponent from './components/asyncComponent.js';
 import { Provider } from 'mobx-react'
-//从Stores中引入
+//从stores中引入
 import abcStore from './stores'
 // 初始化store实例
 const stores = new abcStore()
+const Login = AsyncComponent(() => import('./components/Login.js'));
+const Home = AsyncComponent(() => import('./components/Home.js'));
+const Detail = AsyncComponent(() => import('./components/Detail.js'));
+const Hierarchy = AsyncComponent(() => import('./components/Hierarchy.js'));
+const Dashboard = AsyncComponent(() => import('./components/Dashboard.js'));
+const Errorpage = AsyncComponent(() => import('./components/Errorpage.js'));
 class App extends Component {
   render() {
     return (
