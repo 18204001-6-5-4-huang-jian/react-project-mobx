@@ -13,7 +13,7 @@ export default class Detail extends React.Component {
         this.state = {
             text: '',
             number:80,
-            obj:{1:'react'},
+            obj:{ name:'jhuang',age:'18' },
             chartConfig: {
                 credits: {
                     enabled: false
@@ -149,12 +149,12 @@ export default class Detail extends React.Component {
         const rawHTML = {
             __html: "<h2>非DOM属性:dangerouslySetInnerHTML标签</h2>"
         };
-        const li = Object.keys(this.state.obj).map((item,index) => {
+        const lis = Object.keys(this.state.obj).map((item,index) => {
             return <li key={index}>{this.state.obj[item]}</li>
         })
         return (
             <div className='detail-container'>
-            {/* <ul>{li}</ul> */}
+            <ul>{lis}</ul>
                 <div dangerouslySetInnerHTML={rawHTML} onClick={this.changeInfo}></div>
                 <div style={{ fontSize: '20px', color: 'red' }}>{this.state.text}</div>
                 <div className='detail-chart'>

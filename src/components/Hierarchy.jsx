@@ -7,9 +7,9 @@ class Hierachy extends React.Component {
             text: 'Hierachy',
             list: [
                 { name: 'jhuang' },
-                { name: 'xiaoming' }
+                { name: 'huangjian' }
             ],
-            num:2
+            num:1
         }
     }
     componentDidMount() {
@@ -23,11 +23,7 @@ class Hierachy extends React.Component {
         return (
             <div className='hierachy-container'>
                 <div style={{ fontSize: '22px', color: 'red' }}>{this.state.text}</div>
-                {/* {this.state.text === 'Hierachy' && listTab} */}
-                {/* {listTab} */}
-                {this.state.num === 1?listTab:this.state.num === 2?
-                <Button  type="primary" style={{ margin: '10px' }}>hhh</Button>:
-                <Button  type="primary" style={{ margin: '10px' }}>huang</Button>}
+                {this.state.num === 1?listTab:<Button  type="primary" style={{ margin: '10px' }}>huang</Button>}
             </div >
         )
     }
