@@ -11,17 +11,20 @@ class Children extends React.Component {
     }
     componentDidMount() {
         //console.log(this.props.text);
+        this.props.onRef(this);    // 调用父组件传入的函数，把自身赋给父组件
     }
     componentWillReceiveProps(nextProps){
         //componentWillReceiveProps方法中第一个参数代表即将传入的新的Props
         console.log(nextProps)
-
     }
     onChange = (e) => {
         console.log('value:', e.target.value);
         this.setState({
             value: e.target.value,
         });
+    }
+    childMethod = () =>{
+        console.log('childMethod')
     }
     render() {
         return (
@@ -33,7 +36,7 @@ class Children extends React.Component {
                     <Radio value={3}>C</Radio>
                     <Radio value={4}>D</Radio>
                 </RadioGroup>
-                {this.state.value === 2 && <div style={{marginTop:'20px'}}>B</div>}
+                {this.state.value === 2 && <div style={{marginTop:'20px'}}>您已经选择了B</div>}
             </div>
 
         )

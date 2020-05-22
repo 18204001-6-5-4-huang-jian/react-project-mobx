@@ -147,7 +147,7 @@ export default class Detail extends React.Component {
     }
     render() {
         const rawHTML = {
-            __html: "<h2>非DOM属性:dangerouslySetInnerHTML标签</h2>"
+            __html: "<h2>" + this.state.obj.name + "</h2>"
         };
         const lis = Object.keys(this.state.obj).map((item,index) => {
             return <li key={index}>{this.state.obj[item]}</li>

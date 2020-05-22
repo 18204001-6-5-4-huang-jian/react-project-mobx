@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 // 路由依赖
 import { Switch, Route } from 'react-router-dom'
 import './App.css'
@@ -16,7 +16,7 @@ const Detail = AsyncComponent(() => import('./components/Detail.jsx'));
 const Hierarchy = AsyncComponent(() => import('./components/Hierarchy.jsx'));
 const Dashboard = AsyncComponent(() => import('./components/Dashboard.jsx'));
 const Errorpage = AsyncComponent(() => import('./components/Errorpage.jsx'));
-class App extends Component {
+class App extends React.Component{
   render() {
     return (
       <div className="App">

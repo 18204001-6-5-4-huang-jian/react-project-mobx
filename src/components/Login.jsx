@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { message } from 'antd'
 import md5 from 'md5'
 // import  '../less/login.less'
@@ -12,7 +12,7 @@ export default class Login extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            name: 'Welcome',
+            text: 'Welcome',
             email:'',
             password:''
         }
@@ -56,7 +56,7 @@ export default class Login extends React.Component {
         })
     }
     render() {
-        const { name } = this.state;
+        const { text } = this.state;
         const { listStore } = this.props;
         return (
             <div className="login-background" >
@@ -66,7 +66,7 @@ export default class Login extends React.Component {
                         'class-two': true,
                         'login-title': true
                     })} > 
-                    {listStore.lang === 'zh_CN' ? '欢迎' : name}
+                    {listStore.lang === 'zh_CN' ? '欢迎' : text}
                      </div>
                     <div className="inputs">
                     <input type="text" value={this.state.email} name="email" placeholder="账 号" autoComplete="off" onChange={this.handleInputChange}/>
