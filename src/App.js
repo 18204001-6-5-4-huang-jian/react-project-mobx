@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 // 路由依赖
 import { Switch, Route } from 'react-router-dom'
 import './App.css'
@@ -6,9 +6,9 @@ import './App.css'
 import AsyncComponent from './components/asyncComponent.jsx';
 import { Provider } from 'mobx-react'
 //从stores中引入   
-import Store from './stores'
+import abcStore from './stores'
 // 初始化store实例
-const stores = new Store()
+const stores = new abcStore()
 // 按需引入组件
 const Login = AsyncComponent(() => import('./components/Login.jsx'));
 const Home = AsyncComponent(() => import('./components/Home.jsx'));
@@ -16,7 +16,7 @@ const Detail = AsyncComponent(() => import('./components/Detail.jsx'));
 const Hierarchy = AsyncComponent(() => import('./components/Hierarchy.jsx'));
 const Dashboard = AsyncComponent(() => import('./components/Dashboard.jsx'));
 const Errorpage = AsyncComponent(() => import('./components/Errorpage.jsx'));
-class App extends Component {
+class App extends React.Component{
   render() {
     return (
       <div className="App">

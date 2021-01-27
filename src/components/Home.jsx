@@ -1,5 +1,5 @@
 import React from 'react'
-import { Popover,DatePicker , message, Row, Col } from 'antd'
+import { Button,Popover,DatePicker , message, Row, Col } from 'antd'
 import classNames from 'classnames'
 import Child from '../container/Child.jsx'
 import '../css/home.css'
@@ -42,11 +42,15 @@ class Home extends React.Component {
 		console.log(date);
 		console.log(dateString);
 	}
+	handleChildMethod = ()=> {
+		// this上就有了子组件
+        this.$Child.childMethod();
+    }
 	render() {
 		const content = (
 			<div>
 				<p>17600719115</p>
-				<p>jhuang@abcft.com</p>
+				<p>huang_jian928@163.com</p>
 			</div>
 		)
 		return (
@@ -59,7 +63,7 @@ class Home extends React.Component {
 					<div className='home-header-popver'>
 						<Popover content={content} title="用户详情信息如下 :" trigger='hover'>
 							<div className='home-header-popver-headimg'></div>
-							<div className='home-header-popver-email'>jhuang@abcft.com</div>
+							<div className='home-header-popver-email'>huang_jian928@163.com</div>
 						</Popover>
 					</div>
 				</div>
@@ -77,7 +81,8 @@ class Home extends React.Component {
 				<Row gutter={20} align="middle" type="flex" justify="center" style={{marginTop:'20px'}}>
 				 <DatePicker onChange={this.onChange} />
 				</Row>
-				<Child text={this.state.text} sendParent={(params) => { this.clickFromchild(params) }} />
+				<Child text={this.state.text} sendParent={(params) => { this.clickFromchild(params) }} onRef={(ref)=> {this.$Child=ref}}/>
+				<Button style={{marginTop:'30px'}} type="primary" onClick={this.handleChildMethod}>调用子组件方法</Button>
 			</div>
 		)
 	}
