@@ -11,6 +11,9 @@ class Home extends React.Component {
 			status: 'Left'
 		}
 	}
+	componentWillUnmount() {
+
+	}
 	componentDidMount() {
 		console.log(this.props)
 		if(this.props.location.search){
@@ -26,9 +29,6 @@ class Home extends React.Component {
 			});
 			console.log(obj);
 		}
-	}
-	componentWillUnmount() {
-
 	}
 	clickFromchild = (receiveParams) => {
 		console.log(receiveParams);
