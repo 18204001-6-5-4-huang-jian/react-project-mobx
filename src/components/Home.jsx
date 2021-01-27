@@ -15,6 +15,7 @@ class Home extends React.Component {
 
 	}
 	componentDidMount() {
+		message.info('aaa');
 		console.log(this.props)
 		if(this.props.location.search){
 			message.info('登录成功');
@@ -42,9 +43,12 @@ class Home extends React.Component {
 		console.log(date);
 		console.log(dateString);
 	}
-	handleChildMethod = ()=> {
-		// this上就有了子组件
-        this.$Child.childMethod();
+	bindRef = (ref) => {
+		//this上就有了子组件
+		this.child = ref;
+	}
+	handleChildMethod = () => {
+        this.child.childMethod();
     }
 	render() {
 		const content = (
@@ -81,7 +85,7 @@ class Home extends React.Component {
 				<Row gutter={20} align="middle" type="flex" justify="center" style={{marginTop:'20px'}}>
 				 <DatePicker onChange={this.onChange} />
 				</Row>
-				<Child text={this.state.text} sendParent={(params) => { this.clickFromchild(params) }} onRef={(ref)=> {this.$Child=ref}}/>
+				<Child text={this.state.text} sendParent={(params) => { this.clickFromchild(params) }} onRef={(ref)=> {this.bindRef(ref)}}/>
 				<Button style={{marginTop:'30px'}} type="primary" onClick={this.handleChildMethod}>调用子组件方法</Button>
 			</div>
 		)
