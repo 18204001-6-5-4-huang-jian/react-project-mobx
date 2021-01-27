@@ -15,7 +15,6 @@ class Home extends React.Component {
 
 	}
 	componentDidMount() {
-		message.info('aaa');
 		console.log(this.props)
 		if(this.props.location.search){
 			message.info('登录成功');
@@ -53,7 +52,7 @@ class Home extends React.Component {
 	render() {
 		const content = (
 			<div>
-				<p>17600719115</p>
+				<p>176****9115</p>
 				<p>huang_jian928@163.com</p>
 			</div>
 		)
@@ -86,7 +85,7 @@ class Home extends React.Component {
 				 <DatePicker onChange={this.onChange} />
 				</Row>
 				<Child text={this.state.text} sendParent={(params) => { this.clickFromchild(params) }} onRef={(ref)=> {this.bindRef(ref)}}/>
-				<Button style={{marginTop:'30px'}} type="primary" onClick={this.handleChildMethod}>调用子组件方法</Button>
+				<Button style={{marginTop:'30px'}} type="primary" onClick={this.handleChildMethod}>调用子组件</Button>
 			</div>
 		)
 	}

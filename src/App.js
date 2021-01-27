@@ -16,7 +16,7 @@ const Detail = AsyncComponent(() => import('./components/Detail.jsx'));
 const Hierarchy = AsyncComponent(() => import('./components/Hierarchy.jsx'));
 const Dashboard = AsyncComponent(() => import('./components/Dashboard.jsx'));
 const Errorpage = AsyncComponent(() => import('./components/Errorpage.jsx'));
-class App extends React.Component{
+class App extends React.Component {
   render() {
     return (
       <div className="App">
@@ -28,7 +28,7 @@ class App extends React.Component{
             <Route path="/detail/:id" component={Detail} />
             <Route path="/hierarchy" component={Hierarchy} />
             <Route path="/dashboard" component={Dashboard} />
-            <Route  component={Errorpage} />
+            <Route component={Errorpage} />
           </Switch>
         </Provider>
       </div>
