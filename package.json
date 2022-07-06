@@ -42,7 +42,7 @@
     "md5": "^2.2.1",
     "mobx": "^4.15.4",
     "mobx-react": "^5.4.4",
-    "moment": "^2.22.1",
+    "moment": "^2.29.4",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
